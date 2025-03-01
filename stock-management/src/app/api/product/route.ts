@@ -1,4 +1,3 @@
-import { ok } from "assert";
 import { MongoClient } from "mongodb";
 import { NextRequest, NextResponse } from "next/server";
 
