@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
   let { action, slug, initialQuantity } = await request.json();
-  // console.log(body);
+  
 
   // Replace the uri string with your connection string.
   const uri = process.env.MONGODB_URI as string;
