@@ -1,7 +1,7 @@
 import { MongoClient } from "mongodb";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   // Replace the uri string with your connection string.
   const uri = process.env.MONGODB_URI as string;
 
@@ -29,7 +29,7 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
 
 
-    let body = await request.json()
+    const body = await request.json()
 
 
     // Replace the uri string with your connection string.

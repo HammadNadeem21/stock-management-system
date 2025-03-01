@@ -47,7 +47,7 @@ const CurrentStock = () => {
     }
     // Fetch all the products again to sync back
     const response = await fetch("/api/product");
-    let res = await response.json();
+    const res = await response.json();
     setProducts(res.products);
     e.preventDefault();
   };
@@ -86,8 +86,8 @@ const CurrentStock = () => {
     initialQuantity: number
   ) => {
     // Immediately change the quantity of the product with given slug in Products
-    let index = products.findIndex((item) => item.slug == slug);
-    let newProducts = JSON.parse(JSON.stringify(products));
+    const index = products.findIndex((item) => item.slug == slug);
+    const newProducts = JSON.parse(JSON.stringify(products));
     if (action == "plus") {
       newProducts[index].quantity = initialQuantity + 1;
     } else {
@@ -96,8 +96,8 @@ const CurrentStock = () => {
     setProducts(newProducts);
 
     // Immediately change the quantity of the product with given slug in Dropdown
-    let indexdrop = dropdown.findIndex((item) => item.slug == slug);
-    let newDropdown = JSON.parse(JSON.stringify(dropdown));
+    const indexdrop = dropdown.findIndex((item) => item.slug == slug);
+    const newDropdown = JSON.parse(JSON.stringify(dropdown));
     if (action == "plus") {
       newDropdown[indexdrop].quantity = initialQuantity + 1;
     } else {

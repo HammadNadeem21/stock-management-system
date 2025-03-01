@@ -2,7 +2,7 @@ import { MongoClient } from "mongodb";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
-  let { action, slug, initialQuantity } = await request.json();
+  const { action, slug, initialQuantity } = await request.json();
   
 
   // Replace the uri string with your connection string.
