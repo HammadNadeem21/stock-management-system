@@ -65,6 +65,8 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({ success: true, products });
   } catch (error) {
+    console.error(error);
     return NextResponse.json({ success: false, message: "Database error" }, { status: 500 });
   }
+  
 }

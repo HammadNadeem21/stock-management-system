@@ -69,9 +69,13 @@ export async function GET() {
 
     return NextResponse.json({ success: true, products });
   } catch (error) {
+    console.error(error); // ✅ Error ko log karo taake debugging easy ho
     return NextResponse.json({ success: false, message: "Database error" }, { status: 500 });
   }
 }
+
+
+
 
 export async function POST(request: NextRequest) {
   try {
@@ -84,6 +88,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true, product });
   } catch (error) {
+    console.error(error); // ✅ Error ko log karo taake debugging easy ho
     return NextResponse.json({ success: false, message: "Database error" }, { status: 500 });
   }
 }

@@ -64,6 +64,8 @@ export async function POST(request: NextRequest) {
       message: `${result.matchedCount} documents matched, updated ${result.modifiedCount} documents`,
     });
   } catch (error) {
+    console.error(error);
     return NextResponse.json({ success: false, message: "Database error" }, { status: 500 });
   }
+  
 }
