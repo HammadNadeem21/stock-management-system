@@ -64,7 +64,7 @@ const CurrentStock = () => {
     const value = e.target.value;
     setQuery(value);
 
-    if (value.length > 3) {
+    if (value.length > 2) {
       setLoading(true);
       setDropdown([]);
       const response = await fetch(
