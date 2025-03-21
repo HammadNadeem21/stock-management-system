@@ -19,7 +19,7 @@ const CurrentStock = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       const response = await fetch("http://localhost:3000/api/product");
-      const res = await response.json();
+      const res = await response.json()
       setProducts(res.products);
     };
     fetchProducts();
@@ -64,7 +64,7 @@ const CurrentStock = () => {
     const value = e.target.value;
     setQuery(value);
 
-    if (value.length > 2) {
+    if (value.length > 1) {
       setLoading(true);
       setDropdown([]);
       const response = await fetch(
@@ -166,7 +166,7 @@ const CurrentStock = () => {
             return (
               <div
                 key={item.slug}
-                className="container  p-3  grid grid-cols-2 my-1  justify-between border-b-2 border-[#4ab9bb]"
+                className="container  p-3  grid grid-cols-2 my-1  justify-between  hover:bg-[#dcf6f6] mx-3 w-[98%] rounded-lg cursor-pointer"
               >
                 <span className="">
                   {item.slug} ({item.quantity} available for Rs{item.price})
